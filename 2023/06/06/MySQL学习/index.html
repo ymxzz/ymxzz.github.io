@@ -6,16 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>categories | YM学渣</title>
+  <title>MySQLѧϰ | YM学渣</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://example.com/categories/index.html">
+  <meta name="description" content="-���ݿ⣺�������ݽṹ����֯���洢�͹������ݵĲֿ�  -SQL (Structured query language�ṹ����ѯ����)�� ��һ�����ڷ��ʺʹ������ݿ�(��MySQL��SQL Server��Access��)�ı�׼�ļ�������ԣ���Χ�������ݵ���ɾ�Ĳ飬���ݿ�ģʽ�������޸ģ����ݷ��ʿ��ơ�">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQLѧϰ">
+<meta property="og:url" content="http://example.com/2023/06/06/MySQL%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="YM学渣">
+<meta property="og:description" content="-���ݿ⣺�������ݽṹ����֯���洢�͹������ݵĲֿ�  -SQL (Structured query language�ṹ����ѯ����)�� ��һ�����ڷ��ʺʹ������ݿ�(��MySQL��SQL Server��Access��)�ı�׼�ļ�������ԣ���Χ�������ݵ���ɾ�Ĳ飬���ݿ�ģʽ�������޸ģ����ݷ��ʿ��ơ�">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-21T09:25:30.000Z">
-<meta property="article:modified_time" content="2022-08-28T04:52:26.901Z">
+<meta property="article:published_time" content="2023-06-06T11:42:54.000Z">
+<meta property="article:modified_time" content="2023-06-08T14:04:25.941Z">
 <meta property="article:author" content="YM学渣">
+<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="YM学渣" type="application/atom+xml">
@@ -154,27 +157,184 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="categories-" class="article article-type-categories " itemscope itemprop="blogPost">
+            <article id="post-MySQL学习" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      categories
+      MySQLѧϰ
     </h1>
   
 
         
-        <a href="/categories/index.html" class="archive-article-date">
-  	<time datetime="2020-08-21T09:25:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-21</time>
+        <a href="/2023/06/06/MySQL%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2023-06-06T11:42:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-06-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <pre><code>-���ݿ⣺�������ݽṹ����֯���洢�͹������ݵĲֿ�
+
+-SQL (Structured query language�ṹ����ѯ����)�� ��һ�����ڷ��ʺʹ������ݿ�(��MySQL��SQL Server��Access��)�ı�׼�ļ�������ԣ���Χ�������ݵ���ɾ�Ĳ飬���ݿ�ģʽ�������޸ģ����ݷ��ʿ��ơ�
+</code></pre>
+<span id="more"></span>
+<hr>
+<pre><code>MySQL���أ�https://dev.mysql.com/downloads/mysql/
+��ѹ�ļ��������� my.ini
+
+��װ���ã� https://www.runoob.com/mysql/mysql-install.html
+
+mysql�汾��
+mysql&gt; select version();
++-----------+
+| version() |
++-----------+
+| 8.0.33    |
++-----------+
+1 row in set (0.00 sec)
+</code></pre>
+<p>�޸����룺</p>
+<pre><code>mysqladmin -u�û��� -p������ password ������
+mysqladmin -uroot -pE6laBikl.SN4 password 12345
+</code></pre>
+<p>�鿴���ݿ��е��û���  </p>
+<pre><code>mysql&gt; select user from user;
++------------------+
+| user             |
++------------------+
+| mysql.infoschema |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+4 rows in set (0.00 sec)
+</code></pre>
+<p>�����û����û���Ϊguest������Ϊguest123��</p>
+<pre><code>mysql -u root -p
+mysql&gt; create user &#39;guest&#39;@&#39;localhost&#39; identified by &#39;guest123&#39;;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; select user from user;
++------------------+
+| user             |
++------------------+
+| guest            |
+| mysql.infoschema |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+5 rows in set (0.00 sec)
+</code></pre>
+<p>ɾ��guest:</p>
+<pre><code>mysql&gt; drop user &#39;guest&#39;@&#39;localhost&#39;;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; select user from user;
++------------------+
+| user             |
++------------------+
+| mysql.infoschema |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+4 rows in set (0.00 sec)
+</code></pre>
+<p>�������ݿ⣺</p>
+<pre><code>mysql&gt; create database mydatabase;
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mydatabase         |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.01 sec)
+</code></pre>
+<p>ѡ�����ݿ⣺</p>
+<pre><code>mysql&gt; use mydatabase;
+Database changed
+</code></pre>
+<p>ɾ�����ݿ⣺</p>
+<pre><code>mysql&gt; drop database mydatabase;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+</code></pre>
+<p>MySQL�������ͣ�</p>
+<pre><code>https://www.runoob.com/mysql/mysql-data-types.html
+</code></pre>
+<p>�������ݱ���</p>
+<pre><code>mysql&gt; create table mydatabase_tbl(
+-&gt; mydatabase_id int not null auto_increment,
+-&gt; mydatabase_title varchar(100) not null,
+-&gt; mydatabase_author varchar(40) not null,
+-&gt; submission_date DATE,
+-&gt; primary key ( mydatabase_id )
+-&gt; )engine=InnoDB default charset=utf8;
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+�鿴���Ľṹ
+
+mysql&gt; show tables;
++----------------------+
+| Tables_in_mydatabase |
++----------------------+
+| mydatabase_tbl       |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql&gt; desc mydatabase_tbl;
++-------------------+--------------+------+-----+---------+----------------+
+| Field             | Type         | Null | Key | Default | Extra          |
++-------------------+--------------+------+-----+---------+----------------+
+| mydatabase_id     | int          | NO   | PRI | NULL    | auto_increment |
+| mydatabase_title  | varchar(100) | NO   |     | NULL    |                |
+| mydatabase_author | varchar(40)  | NO   |     | NULL    |                |
+| submission_date   | date         | YES  |     | NULL    |                |
++-------------------+--------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+</code></pre>
+<p>�������ݣ�</p>
+<pre><code>mysql&gt; insert into mydatabase_tbl
+-&gt; (mydatabase_title, mydatabase_author, submission_date)
+-&gt; values
+-&gt; (&quot;MySQLѧϰ&quot;,&quot;YMѧ��&quot;,now());
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+�鿴��
+mysql&gt; select * from mydatabase_tbl;
++---------------+------------------+-------------------+-----------------+
+| mydatabase_id | mydatabase_title | mydatabase_author | submission_date |
++---------------+------------------+-------------------+-----------------+
+|             1 | MySQLѧϰ        | YMѧ��            | 2023-06-08      |
++---------------+------------------+-------------------+-----------------+
+1 row in set (0.00 sec)
+ɾ��
+
+mysql&gt; drop table mydatabase_tbl;
+Query OK, 0 rows affected (0.01 sec)
+</code></pre>
+
       
 
       
@@ -213,6 +373,17 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -263,7 +434,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://example.com/categories/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://example.com/2023/06/06/MySQL%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -275,6 +446,16 @@ var _hmt = _hmt || [];
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2023/06/06/java%E9%85%8D%E7%BD%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java配置</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -312,7 +493,7 @@ var _hmt = _hmt || [];
   
 
   
-  <div id="SOHUCS" sid="" ></div> 
+  <div id="SOHUCS" sid="MySQL学习" ></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = "cysX3aGWt"; 
@@ -345,7 +526,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
