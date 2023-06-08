@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>MySQLѧϰ | YM学渣</title>
+  <title>MySQL学习 | YM学渣</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="-���ݿ⣺�������ݽṹ����֯���洢�͹������ݵĲֿ�  -SQL (Structured query language�ṹ����ѯ����)�� ��һ�����ڷ��ʺʹ������ݿ�(��MySQL��SQL Server��Access��)�ı�׼�ļ�������ԣ���Χ�������ݵ���ɾ�Ĳ飬���ݿ�ģʽ�������޸ģ����ݷ��ʿ��ơ�">
+  <meta name="description" content="-数据库：按照数据结构来组织、存储和管理数据的仓库  -SQL (Structured query language结构化查询语言)： 是一门用于访问和处理数据库(如MySQL、SQL Server、Access等)的标准的计算机语言，范围包括数据的增删改查，数据库模式创建和修改，数据访问控制。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQLѧϰ">
+<meta property="og:title" content="MySQL学习">
 <meta property="og:url" content="http://example.com/2023/06/06/MySQL%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="YM学渣">
-<meta property="og:description" content="-���ݿ⣺�������ݽṹ����֯���洢�͹������ݵĲֿ�  -SQL (Structured query language�ṹ����ѯ����)�� ��һ�����ڷ��ʺʹ������ݿ�(��MySQL��SQL Server��Access��)�ı�׼�ļ�������ԣ���Χ�������ݵ���ɾ�Ĳ飬���ݿ�ģʽ�������޸ģ����ݷ��ʿ��ơ�">
+<meta property="og:description" content="-数据库：按照数据结构来组织、存储和管理数据的仓库  -SQL (Structured query language结构化查询语言)： 是一门用于访问和处理数据库(如MySQL、SQL Server、Access等)的标准的计算机语言，范围包括数据的增删改查，数据库模式创建和修改，数据访问控制。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-06-06T11:42:54.000Z">
-<meta property="article:modified_time" content="2023-06-08T14:04:25.941Z">
+<meta property="article:modified_time" content="2023-06-08T14:08:31.389Z">
 <meta property="article:author" content="YM学渣">
 <meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
@@ -164,7 +164,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      MySQLѧϰ
+      MySQL学习
     </h1>
   
 
@@ -177,18 +177,18 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code>-���ݿ⣺�������ݽṹ����֯���洢�͹������ݵĲֿ�
+        <pre><code>-数据库：按照数据结构来组织、存储和管理数据的仓库
 
--SQL (Structured query language�ṹ����ѯ����)�� ��һ�����ڷ��ʺʹ������ݿ�(��MySQL��SQL Server��Access��)�ı�׼�ļ�������ԣ���Χ�������ݵ���ɾ�Ĳ飬���ݿ�ģʽ�������޸ģ����ݷ��ʿ��ơ�
+-SQL (Structured query language结构化查询语言)： 是一门用于访问和处理数据库(如MySQL、SQL Server、Access等)的标准的计算机语言，范围包括数据的增删改查，数据库模式创建和修改，数据访问控制。
 </code></pre>
 <span id="more"></span>
 <hr>
-<pre><code>MySQL���أ�https://dev.mysql.com/downloads/mysql/
-��ѹ�ļ��������� my.ini
+<pre><code>MySQL下载：https://dev.mysql.com/downloads/mysql/
+解压文件夹下配置 my.ini
 
-��װ���ã� https://www.runoob.com/mysql/mysql-install.html
+安装配置： https://www.runoob.com/mysql/mysql-install.html
 
-mysql�汾��
+mysql版本：
 mysql&gt; select version();
 +-----------+
 | version() |
@@ -197,11 +197,11 @@ mysql&gt; select version();
 +-----------+
 1 row in set (0.00 sec)
 </code></pre>
-<p>�޸����룺</p>
-<pre><code>mysqladmin -u�û��� -p������ password ������
+<p>修改密码：</p>
+<pre><code>mysqladmin -u用户名 -p旧密码 password 新密码
 mysqladmin -uroot -pE6laBikl.SN4 password 12345
 </code></pre>
-<p>�鿴���ݿ��е��û���  </p>
+<p>查看数据库中的用户：  </p>
 <pre><code>mysql&gt; select user from user;
 +------------------+
 | user             |
@@ -213,7 +213,7 @@ mysqladmin -uroot -pE6laBikl.SN4 password 12345
 +------------------+
 4 rows in set (0.00 sec)
 </code></pre>
-<p>�����û����û���Ϊguest������Ϊguest123��</p>
+<p>添加用户，用户名为guest，密码为guest123：</p>
 <pre><code>mysql -u root -p
 mysql&gt; create user &#39;guest&#39;@&#39;localhost&#39; identified by &#39;guest123&#39;;
 Query OK, 0 rows affected (0.00 sec)
@@ -230,7 +230,7 @@ mysql&gt; select user from user;
 +------------------+
 5 rows in set (0.00 sec)
 </code></pre>
-<p>ɾ��guest:</p>
+<p>删除guest:</p>
 <pre><code>mysql&gt; drop user &#39;guest&#39;@&#39;localhost&#39;;
 Query OK, 0 rows affected (0.00 sec)
 
@@ -245,7 +245,7 @@ mysql&gt; select user from user;
 +------------------+
 4 rows in set (0.00 sec)
 </code></pre>
-<p>�������ݿ⣺</p>
+<p>创建数据库：</p>
 <pre><code>mysql&gt; create database mydatabase;
 Query OK, 1 row affected (0.00 sec)
 
@@ -261,11 +261,11 @@ mysql&gt; show databases;
 +--------------------+
 5 rows in set (0.01 sec)
 </code></pre>
-<p>ѡ�����ݿ⣺</p>
+<p>选择数据库：</p>
 <pre><code>mysql&gt; use mydatabase;
 Database changed
 </code></pre>
-<p>ɾ�����ݿ⣺</p>
+<p>删除数据库：</p>
 <pre><code>mysql&gt; drop database mydatabase;
 Query OK, 0 rows affected (0.00 sec)
 
@@ -280,10 +280,10 @@ mysql&gt; show databases;
 +--------------------+
 4 rows in set (0.00 sec)
 </code></pre>
-<p>MySQL�������ͣ�</p>
+<p>MySQL数据类型：</p>
 <pre><code>https://www.runoob.com/mysql/mysql-data-types.html
 </code></pre>
-<p>�������ݱ���</p>
+<p>创建数据表：</p>
 <pre><code>mysql&gt; create table mydatabase_tbl(
 -&gt; mydatabase_id int not null auto_increment,
 -&gt; mydatabase_title varchar(100) not null,
@@ -293,7 +293,7 @@ mysql&gt; show databases;
 -&gt; )engine=InnoDB default charset=utf8;
 Query OK, 0 rows affected, 1 warning (0.01 sec)
 
-�鿴���Ľṹ
+查看表的结构
 
 mysql&gt; show tables;
 +----------------------+
@@ -314,22 +314,22 @@ mysql&gt; desc mydatabase_tbl;
 +-------------------+--------------+------+-----+---------+----------------+
 4 rows in set (0.00 sec)
 </code></pre>
-<p>�������ݣ�</p>
+<p>插入数据：</p>
 <pre><code>mysql&gt; insert into mydatabase_tbl
 -&gt; (mydatabase_title, mydatabase_author, submission_date)
 -&gt; values
--&gt; (&quot;MySQLѧϰ&quot;,&quot;YMѧ��&quot;,now());
+-&gt; (&quot;MySQL学习&quot;,&quot;YM学渣&quot;,now());
 Query OK, 1 row affected, 1 warning (0.00 sec)
 
-�鿴��
+查看：
 mysql&gt; select * from mydatabase_tbl;
 +---------------+------------------+-------------------+-----------------+
 | mydatabase_id | mydatabase_title | mydatabase_author | submission_date |
 +---------------+------------------+-------------------+-----------------+
-|             1 | MySQLѧϰ        | YMѧ��            | 2023-06-08      |
+|             1 | MySQL学习        | YM学渣            | 2023-06-08      |
 +---------------+------------------+-------------------+-----------------+
 1 row in set (0.00 sec)
-ɾ��
+删除
 
 mysql&gt; drop table mydatabase_tbl;
 Query OK, 0 rows affected (0.01 sec)
@@ -596,7 +596,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+                <a href="javascript:void(0)" class="js-tag color3">C++刷题笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -604,19 +604,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">C++刷题笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">java学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
