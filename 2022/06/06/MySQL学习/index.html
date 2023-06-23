@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2023 | YM学渣</title>
+  <title>MySQL学习 | YM学渣</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="YM学渣">
-<meta property="og:url" content="http://example.com/archives/2023/index.html">
+  <meta name="description" content="-数据库：按照数据结构来组织、存储和管理数据的仓库  -SQL (Structured query language结构化查询语言)： 是一门用于访问和处理数据库(如MySQL、SQL Server、Access等)的标准的计算机语言，范围包括数据的增删改查，数据库模式创建和修改，数据访问控制。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL学习">
+<meta property="og:url" content="http://example.com/2022/06/06/MySQL%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="YM学渣">
+<meta property="og:description" content="-数据库：按照数据结构来组织、存储和管理数据的仓库  -SQL (Structured query language结构化查询语言)： 是一门用于访问和处理数据库(如MySQL、SQL Server、Access等)的标准的计算机语言，范围包括数据的增删改查，数据库模式创建和修改，数据访问控制。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-06-06T11:42:54.000Z">
+<meta property="article:modified_time" content="2023-06-21T06:22:25.553Z">
 <meta property="article:author" content="YM学渣">
+<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="YM学渣" type="application/atom+xml">
@@ -152,190 +157,479 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-MySQL学习" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MySQL学习
+    </h1>
+  
+
+        
+        <a href="/2022/06/06/MySQL%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2022-06-06T11:42:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-06</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>-数据库：按照数据结构来组织、存储和管理数据的仓库
+
+-SQL (Structured query language结构化查询语言)： 是一门用于访问和处理数据库(如MySQL、SQL Server、Access等)的标准的计算机语言，范围包括数据的增删改查，数据库模式创建和修改，数据访问控制。
+</code></pre>
+<span id="more"></span>
+<hr>
+<pre><code>MySQL下载：https://dev.mysql.com/downloads/mysql/
+解压文件夹下配置 my.ini
+
+安装配置： https://www.runoob.com/mysql/mysql-install.html
+
+登录：
+mysql -u root -p
+mysql版本：
+mysql&gt; select version();
++-----------+
+| version() |
++-----------+
+| 8.0.33    |
++-----------+
+1 row in set (0.00 sec)
+</code></pre>
+<p>修改密码：</p>
+<pre><code>mysqladmin -u用户名 -p旧密码 password 新密码
+mysqladmin -uroot -pE6laBikl.SN4 password 12345
+</code></pre>
+<h3 id="SQL基础语法"><a href="#SQL基础语法" class="headerlink" title="SQL基础语法"></a>SQL基础语法</h3><h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><h4 id="INSERT-INTO-语句"><a href="#INSERT-INTO-语句" class="headerlink" title="INSERT INTO 语句"></a>INSERT INTO 语句</h4><p>INSERT INTO 语句用于向表中插入新记录。<br>SQL INSERT INTO 语法<br>INSERT INTO 语句可以有两种编写形式。<br>第一种形式无需指定要插入数据的列名，只需提供被插入的值即可：</p>
+<p><code>INSERT INTO table_name VALUES (value1,value2,value3,...);</code><br>第二种形式需要指定列名及被插入的值：</p>
+<p><code>INSERT INTO table_name (column1,column2,column3,...) VALUES (value1,value2,value3,...);</code></p>
+<pre><code>mysql&gt; insert into mydatabase_tbl values (4,&#39;亿贫如洗&#39;,&#39;王道长&#39;,&#39;2023,06,11&#39;);
+Query OK, 1 row affected, 1 warning (0.01 sec)
+
+
+mysql&gt; insert into mydatabase_tbl (mydatabase_title,mydatabase_author,submission_date) values (&#39;一念之插&#39;,&#39;张灵玉&#39;,&#39;2023-06-11&#39;);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; select * from mydatabase_tbl;
++---------------+------------------+-------------------+-----------------+
+| mydatabase_id | mydatabase_title | mydatabase_author | submission_date |
++---------------+------------------+-------------------+-----------------+
+|             1 | MySQL学习        | YM学渣            | 2023-06-08      |
+|             2 | 阿威十八式       | 宝儿姐            | 2023-06-10      |
+|             3 | 不摇碧莲         | 张楚岚            | 2023-06-10      |
+|             4 | 亿贫如洗         | 王道长            | 2023-06-11      |
+|             5 | 一念之插         | 张灵玉            | 2023-06-11      |
++---------------+------------------+-------------------+-----------------+
+5 rows in set (0.00 sec)
+</code></pre>
+<h1 id="删"><a href="#删" class="headerlink" title="删"></a>删</h1><h4 id="DELETE-语句"><a href="#DELETE-语句" class="headerlink" title="DELETE 语句"></a>DELETE 语句</h4><p>DELETE 语句用于删除表中的行。<br>SQL DELETE 语法<br><code>DELETE FROM table_name WHERE condition; </code></p>
+<pre><code>mysql&gt; delete from mydatabase_tbl where mydatabase_id=1;
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; select * from mydatabase_tbl;
++---------------+------------------+-------------------+-----------------+
+| mydatabase_id | mydatabase_title | mydatabase_author | submission_date |
++---------------+------------------+-------------------+-----------------+
+|             2 | 机智一匹         | 宝儿姐            | 2023-06-10      |
+|             3 | 不摇碧莲         | 张楚岚            | 2023-06-10      |
+|             4 | 亿贫如洗         | 王道长            | 2023-06-11      |
+|             5 | 一念之插         | 张灵玉            | 2023-06-11      |
++---------------+------------------+-------------------+-----------------+
+4 rows in set (0.00 sec)
+</code></pre>
+<h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><h4 id="UPDATE-语句"><a href="#UPDATE-语句" class="headerlink" title="UPDATE 语句"></a>UPDATE 语句</h4><p>UPDATE 语句用于更新表中已存在的记录。<br>SQL UPDATE 语法<br><code>UPDATE table_name SET column1 = value1, column2 = value2, ...WHERE condition;</code></p>
+<pre><code>mysql&gt; update mydatabase_tbl set mydatabase_title=&#39;机智一匹&#39; where mydatabase_id=2;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql&gt; select * from mydatabase_tbl;
++---------------+------------------+-------------------+-----------------+
+| mydatabase_id | mydatabase_title | mydatabase_author | submission_date |
++---------------+------------------+-------------------+-----------------+
+|             1 | MySQL学习        | YM学渣            | 2023-06-08      |
+|             2 | 机智一匹       | 宝儿姐            | 2023-06-10      |
+|             3 | 不摇碧莲         | 张楚岚            | 2023-06-10      |
+|             4 | 亿贫如洗         | 王道长            | 2023-06-11      |
+|             5 | 一念之插         | 张灵玉            | 2023-06-11      |
++---------------+------------------+-------------------+-----------------+
+5 rows in set (0.00 sec)
+</code></pre>
+<h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><h4 id="SELECT语句-实际对大小写不敏感"><a href="#SELECT语句-实际对大小写不敏感" class="headerlink" title="SELECT语句 (实际对大小写不敏感)"></a>SELECT语句 (实际对大小写不敏感)</h4><p>SELECT 语句用于从数据库中选取数据。结果被存储在一个结果表中，称为结果集。</p>
+<p><code>SELECT * FROM table_name;</code></p>
+<pre><code>mysql&gt; select * from mydatabase_tbl;
++---------------+------------------+-------------------+-----------------+
+| mydatabase_id | mydatabase_title | mydatabase_author | submission_date |
++---------------+------------------+-------------------+-----------------+
+|             1 | MySQL学习        | YM学渣            | 2023-06-08      |
+|             2 | 阿威十八式       | 宝儿姐            | 2023-06-10      |
+|             3 | 不摇碧莲         | 张楚岚            | 2023-06-10      |
++---------------+------------------+-------------------+-----------------+
+3 rows in set (0.00 sec)
+</code></pre>
+<p><code>SELECT column1, column2,FROM table_name;</code></p>
+<pre><code>mysql&gt; select submission_date,mydatabase_title from mydatabase_tbl;
++-----------------+------------------+
+| submission_date | mydatabase_title |
++-----------------+------------------+
+| 2023-06-08      | MySQL学习        |
+| 2023-06-10      | 阿威十八式       |
+| 2023-06-10      | 不摇碧莲         |
++-----------------+------------------+
+3 rows in set (0.00 sec)
+
+mysql&gt; select submission_date from mydatabase_tbl;
++-----------------+
+| submission_date |
++-----------------+
+| 2023-06-08      |
+| 2023-06-10      |
+| 2023-06-10      |
++-----------------+
+3 rows in set (0.00 sec)
+</code></pre>
+<h4 id="SELECT-DISTINCT-语法"><a href="#SELECT-DISTINCT-语法" class="headerlink" title="SELECT DISTINCT 语法"></a>SELECT DISTINCT 语法</h4><p>选取不重复的元素</p>
+<p><code>SELECT DISTINCT column1, column2, FROM table_name;</code></p>
+<pre><code>mysql&gt; select distinct submission_date from mydatabase_tbl;
++-----------------+
+| submission_date |
++-----------------+
+| 2023-06-08      |
+| 2023-06-10      |
++-----------------+
+2 rows in set (0.00 sec)
+</code></pre>
+<h4 id="WHERE-子句"><a href="#WHERE-子句" class="headerlink" title="WHERE 子句"></a>WHERE 子句</h4><p>where用于提取满足条件的数据</p>
+<p><code>SELECT column1, column2, FROM table_name WHERE condition;</code> 多个条件间用与或（and or）</p>
+<pre><code>mysql&gt; select * from mydatabase_tbl where mydatabase_author = &#39;宝儿姐&#39;;
++---------------+------------------+-------------------+-----------------+
+| mydatabase_id | mydatabase_title | mydatabase_author | submission_date |
++---------------+------------------+-------------------+-----------------+
+|             2 | 阿威十八式       | 宝儿姐            | 2023-06-10      |
++---------------+------------------+-------------------+-----------------+
+1 row in set (0.00 sec)
+
+mysql&gt; select mydatabase_title,mydatabase_author from mydatabase_tbl where mydatabase_id=3;
++------------------+-------------------+
+| mydatabase_title | mydatabase_author |
++------------------+-------------------+
+| 不摇碧莲         | 张楚岚            |
++------------------+-------------------+
+1 row in set (0.00 sec)
+</code></pre>
+<h4 id="SQL-ORDER-BY-关键字"><a href="#SQL-ORDER-BY-关键字" class="headerlink" title="SQL ORDER BY 关键字"></a>SQL ORDER BY 关键字</h4><p>ORDER BY 关键字用于对结果集按照一个列或者多个列进行排序，默认按照升序对记录进行排序。如果需要按照降序对记录进行排序，您可以使用 DESC 关键字。</p>
+<p><code>SELECT column1, column2, FROM table_name ORDER BY column1, column2 ASC|DESC;</code></p>
+<pre><code>mysql&gt; select mydatabase_title from mydatabase_tbl order by submission_date desc;
++------------------+
+| mydatabase_title |
++------------------+
+| 阿威十八式       |
+| 不摇碧莲         |
+| MySQL学习        |
++------------------+
+3 rows in set (0.00 sec)
+</code></pre>
+<h5 id="查看数据库中的用户："><a href="#查看数据库中的用户：" class="headerlink" title="查看数据库中的用户："></a>查看数据库中的用户：</h5><pre><code>mysql&gt; select user from user;
++------------------+
+| user             |
++------------------+
+| mysql.infoschema |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+4 rows in set (0.00 sec)
+</code></pre>
+<h4 id="添加用户，用户名为guest，密码为guest123："><a href="#添加用户，用户名为guest，密码为guest123：" class="headerlink" title="添加用户，用户名为guest，密码为guest123："></a>添加用户，用户名为guest，密码为guest123：</h4><pre><code>mysql -u root -p
+mysql&gt; create user &#39;guest&#39;@&#39;localhost&#39; identified by &#39;guest123&#39;;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; select user from user;
++------------------+
+| user             |
++------------------+
+| guest            |
+| mysql.infoschema |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+5 rows in set (0.00 sec)
+</code></pre>
+<h4 id="删除guest"><a href="#删除guest" class="headerlink" title="删除guest:"></a>删除guest:</h4><pre><code>mysql&gt; drop user &#39;guest&#39;@&#39;localhost&#39;;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; select user from user;
++------------------+
+| user             |
++------------------+
+| mysql.infoschema |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+4 rows in set (0.00 sec)
+</code></pre>
+<h4 id="创建数据库："><a href="#创建数据库：" class="headerlink" title="创建数据库："></a>创建数据库：</h4><pre><code>mysql&gt; create database mydatabase;
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mydatabase         |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.01 sec)
+</code></pre>
+<h4 id="选择数据库："><a href="#选择数据库：" class="headerlink" title="选择数据库："></a>选择数据库：</h4><pre><code>mysql&gt; use mydatabase;
+Database changed
+</code></pre>
+<h4 id="删除数据库："><a href="#删除数据库：" class="headerlink" title="删除数据库："></a>删除数据库：</h4><pre><code>mysql&gt; drop database mydatabase;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+</code></pre>
+<h4 id="MySQL数据类型："><a href="#MySQL数据类型：" class="headerlink" title="MySQL数据类型："></a>MySQL数据类型：</h4><pre><code>https://www.runoob.com/mysql/mysql-data-types.html
+</code></pre>
+<h4 id="创建数据表："><a href="#创建数据表：" class="headerlink" title="创建数据表："></a>创建数据表：</h4><pre><code>mysql&gt; create table mydatabase_tbl(
+-&gt; mydatabase_id int not null auto_increment,
+-&gt; mydatabase_title varchar(100) not null,
+-&gt; mydatabase_author varchar(40) not null,
+-&gt; submission_date DATE,
+-&gt; primary key ( mydatabase_id )
+-&gt; )engine=InnoDB default charset=utf8;
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+查看表的结构
+
+mysql&gt; show tables;
++----------------------+
+| Tables_in_mydatabase |
++----------------------+
+| mydatabase_tbl       |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql&gt; desc mydatabase_tbl;
++-------------------+--------------+------+-----+---------+----------------+
+| Field             | Type         | Null | Key | Default | Extra          |
++-------------------+--------------+------+-----+---------+----------------+
+| mydatabase_id     | int          | NO   | PRI | NULL    | auto_increment |
+| mydatabase_title  | varchar(100) | NO   |     | NULL    |                |
+| mydatabase_author | varchar(40)  | NO   |     | NULL    |                |
+| submission_date   | date         | YES  |     | NULL    |                |
++-------------------+--------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+</code></pre>
+<h4 id="LIKE-子句"><a href="#LIKE-子句" class="headerlink" title="LIKE 子句"></a>LIKE 子句</h4><p>%表示任意字符，类似unix中的*<br>‘%a’     &#x2F;&#x2F;以a结尾的数据<br>‘a%’     &#x2F;&#x2F;以a开头的数据<br>‘%a%’    &#x2F;&#x2F;含有a的数据<br>‘<em>a</em>‘    &#x2F;&#x2F;三位且中间字母是a的<br>‘<em>a’     &#x2F;&#x2F;两位且结尾字母是a的<br>‘a</em>‘     &#x2F;&#x2F;两位且开头字母是a的</p>
+<p>SQL SELECT 语句使用 LIKE 子句从数据表中读取数据的通用语法：<br><code>SELECT field1, field2,...fieldN  FROM table_name WHERE field1 LIKE condition1 [AND [OR]] filed2 = &#39;somevalue&#39;</code></p>
+<pre><code>mysql&gt; select  mydatabase_title,mydatabase_author from  mydatabase_tbl where mydatabase_title like &#39;%一%&#39;;
++------------------+-------------------+
+| mydatabase_title | mydatabase_author |
++------------------+-------------------+
+| 机智一匹         | 宝儿姐            |
+| 一念之插         | 张灵玉            |
++------------------+-------------------+
+2 rows in set (0.00 sec)
+</code></pre>
+<p>表结构的复制：<code>mysql&gt; create table tb2 like tb1;</code></p>
+<p>表结构的复制同时拷贝数据：<code>mysql&gt; create table tb2 select * from tb1;</code></p>
+<h4 id="MySQL-UNION-操作符"><a href="#MySQL-UNION-操作符" class="headerlink" title="MySQL UNION 操作符"></a>MySQL UNION 操作符</h4><p>MySQL UNION 操作符用于连接两个以上的 SELECT 语句的结果组合到一个结果集合中。多个 SELECT 语句会删除重复的数据。<br><code> SELECT expression1, expression2, ... expression_n FROM tables [WHERE conditions] UNION [ALL | DISTINCT] SELECT expression1, expression2, ... expression_n FROM tables [WHERE conditions];</code></p>
+<h2 id="Python连接mysql"><a href="#Python连接mysql" class="headerlink" title="Python连接mysql"></a>Python连接mysql</h2><p><code>$ python3 -m pip install PyMySQL</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"><span class="comment"># 打开数据库连接</span></span><br><span class="line">db = pymysql.connect(host = <span class="string">&quot;localhost&quot;</span>,</span><br><span class="line">                user = <span class="string">&quot;root&quot;</span>,</span><br><span class="line">                password = <span class="string">&quot;12345&quot;</span>,</span><br><span class="line">                database = <span class="string">&#x27;mydatabase&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 cursor() 方法创建一个游标对象 cursor</span></span><br><span class="line">cursor = db.cursor()</span><br><span class="line"><span class="comment"># 使用 execute()  方法执行 SQL 查询 </span></span><br><span class="line">cursor.execute(<span class="string">&quot;select * from mydatabase_tbl&quot;</span>)</span><br><span class="line"><span class="comment"># 使用 fetchone() 方法获取单条数据.</span></span><br><span class="line">data = cursor.fetchone()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Database_vision:<span class="subst">&#123;data&#125;</span>&quot;</span>)</span><br><span class="line"><span class="comment"># 关闭数据库连接</span></span><br><span class="line">db.close()</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zfb.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wx.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/06/23/base64%E5%9B%BE%E7%89%87%E6%8F%92%E5%85%A5/" class="archive-article-date">
-  	<time datetime="2023-06-23T04:37:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-06-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/06/23/base64%E5%9B%BE%E7%89%87%E6%8F%92%E5%85%A5/">base64图片插入</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/06/11/SQL%E5%88%B7%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2023-06-11T12:27:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-06-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/06/11/SQL%E5%88%B7%E9%A2%98/">SQL刷题笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">SQL刷题笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://example.com/2022/06/06/MySQL%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/06/06/%E8%99%9A%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2023-06-06T02:56:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-06-06</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2023/06/02/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/06/05/Union/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C++ 联合体</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/06/06/%E8%99%9A%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/">虚析构函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">C++学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">SQL基础语法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A2%9E"><span class="toc-number"></span> <span class="toc-text">增</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#INSERT-INTO-%E8%AF%AD%E5%8F%A5"><span class="toc-number">0.1.</span> <span class="toc-text">INSERT INTO 语句</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%A0"><span class="toc-number"></span> <span class="toc-text">删</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DELETE-%E8%AF%AD%E5%8F%A5"><span class="toc-number">0.1.</span> <span class="toc-text">DELETE 语句</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B9"><span class="toc-number"></span> <span class="toc-text">改</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#UPDATE-%E8%AF%AD%E5%8F%A5"><span class="toc-number">0.1.</span> <span class="toc-text">UPDATE 语句</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5"><span class="toc-number"></span> <span class="toc-text">查</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SELECT%E8%AF%AD%E5%8F%A5-%E5%AE%9E%E9%99%85%E5%AF%B9%E5%A4%A7%E5%B0%8F%E5%86%99%E4%B8%8D%E6%95%8F%E6%84%9F"><span class="toc-number">0.1.</span> <span class="toc-text">SELECT语句 (实际对大小写不敏感)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SELECT-DISTINCT-%E8%AF%AD%E6%B3%95"><span class="toc-number">0.2.</span> <span class="toc-text">SELECT DISTINCT 语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#WHERE-%E5%AD%90%E5%8F%A5"><span class="toc-number">0.3.</span> <span class="toc-text">WHERE 子句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL-ORDER-BY-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">0.4.</span> <span class="toc-text">SQL ORDER BY 关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E7%9A%84%E7%94%A8%E6%88%B7%EF%BC%9A"><span class="toc-number">0.4.1.</span> <span class="toc-text">查看数据库中的用户：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%EF%BC%8C%E7%94%A8%E6%88%B7%E5%90%8D%E4%B8%BAguest%EF%BC%8C%E5%AF%86%E7%A0%81%E4%B8%BAguest123%EF%BC%9A"><span class="toc-number">0.5.</span> <span class="toc-text">添加用户，用户名为guest，密码为guest123：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4guest"><span class="toc-number">0.6.</span> <span class="toc-text">删除guest:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%9A"><span class="toc-number">0.7.</span> <span class="toc-text">创建数据库：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%9A"><span class="toc-number">0.8.</span> <span class="toc-text">选择数据库：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%9A"><span class="toc-number">0.9.</span> <span class="toc-text">删除数据库：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MySQL%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%9A"><span class="toc-number">0.10.</span> <span class="toc-text">MySQL数据类型：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E8%A1%A8%EF%BC%9A"><span class="toc-number">0.11.</span> <span class="toc-text">创建数据表：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LIKE-%E5%AD%90%E5%8F%A5"><span class="toc-number">0.12.</span> <span class="toc-text">LIKE 子句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MySQL-UNION-%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-number">0.13.</span> <span class="toc-text">MySQL UNION 操作符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python%E8%BF%9E%E6%8E%A5mysql"><span class="toc-number"></span> <span class="toc-text">Python连接mysql</span></a>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/06/04/C++%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2023-06-04T12:33:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-06-04</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/06/04/C++%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">C++刷题笔记</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">C++刷题笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/06/02/hello-world/" class="archive-article-date">
-  	<time datetime="2023-06-02T08:05:06.844Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-06-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/06/02/hello-world/">Hello World</a>
-    </h1>
+  <div id="SOHUCS" sid="MySQL学习" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "cysX3aGWt"; 
+var conf = "prod_1dcda447175aada96edcdb7e412338fa"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -358,8 +652,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

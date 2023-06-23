@@ -16,7 +16,7 @@
 <meta property="og:description" content="当数组名字作为函数实参传递1234567int foo(char x[10])&amp;#123;    return sizeof(x);&amp;#125;int main()&amp;#123;    char a[10];    std::cout&lt;&lt; foo(a);&amp;#125; -当数组名字作为函数实参传递时会退化为指针，此处打印指针的大小，32位指针大小为4，64为则为8-打印： 8 (32位的">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-06-04T12:33:01.000Z">
-<meta property="article:modified_time" content="2023-06-05T03:41:54.074Z">
+<meta property="article:modified_time" content="2023-06-21T06:21:05.915Z">
 <meta property="article:author" content="YM学渣">
 <meta property="article:tag" content="C++刷题笔记">
 <meta name="twitter:card" content="summary">
@@ -182,7 +182,10 @@ var _hmt = _hmt || [];
 <p>-当数组名字作为函数实参传递时会退化为指针，此处打印指针的大小，32位指针大小为4，64为则为8<br>-打印： 8 (32位的话打印4)</p>
 <hr>
 <p>C语言的三种基本控制结构（）</p>
-
+<ol start="3">
+<li>无重复字符的最长子串 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/">https://leetcode.cn/problems/longest-substring-without-repeating-characters/</a><br>给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> l = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> r = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(s.<span class="built_in">size</span>()== <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(s.<span class="built_in">size</span>() == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">       <span class="keyword">while</span>(s[r+<span class="number">1</span>])&#123;</span><br><span class="line">            r += <span class="number">1</span>;</span><br><span class="line">            <span class="comment">//如果l,r指向内容相同，l移动</span></span><br><span class="line">            <span class="keyword">if</span> (s[r] == s[l])&#123;</span><br><span class="line">                l+=<span class="number">1</span>;  </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//遍历l~r间的内容 ,若过程中有元素与r指向内容相同，则l指向下一个内容,&#x27;dvsv&#x27;-&gt;&#x27;sv&#x27;</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = l; j &lt; r; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(s[j] == s[r])&#123;</span><br><span class="line">                    l=j+<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            count = r-l+<span class="number">1</span>;</span><br><span class="line">            res = <span class="built_in">max</span>(res,count);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
 
       
@@ -296,11 +299,11 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2023/06/05/Union/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/06/06/%E8%99%9A%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          C++ 联合体
+          虚析构函数
         
       </div>
     </a>
@@ -453,11 +456,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">SQL刷题笔记</a>
+                <a href="javascript:void(0)" class="js-tag color3">C++刷题笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+                <a href="javascript:void(0)" class="js-tag color3">SQL刷题笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -465,7 +468,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">C++刷题笔记</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
