@@ -16,7 +16,7 @@
 <meta property="og:description" content="超过经理收入的员工">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-06-11T12:27:38.000Z">
-<meta property="article:modified_time" content="2023-06-21T06:22:11.980Z">
+<meta property="article:modified_time" content="2023-06-27T13:45:12.230Z">
 <meta property="article:author" content="YM学渣">
 <meta property="article:tag" content="SQL刷题笔记">
 <meta name="twitter:card" content="summary">
@@ -178,17 +178,30 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <ol start="181">
-<li>超过经理收入的员工</li>
+<li>超过经理收入的员工<span id="more"></span>
+自连接：把一张表 当做多个表使用<br>eg.<br>select …<br>from 表 a（别名）<br>join 表 b（别名）</li>
 </ol>
-<span id="more"></span>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line"><span class="keyword">select</span> e1.name <span class="keyword">as</span> Employee  <span class="keyword">from</span>  Employee e1,Employee e2 </span><br><span class="line"><span class="keyword">where</span> e1.managerId <span class="operator">=</span> e2.id <span class="keyword">and</span> e1. salary <span class="operator">&gt;</span> e2.salary;</span><br></pre></td></tr></table></figure>
+<p>on a.字段&#x3D;b.字段</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e1.name <span class="keyword">as</span> Employee  <span class="keyword">from</span>  Employee e1,Employee e2 </span><br><span class="line"><span class="keyword">where</span> e1.managerId <span class="operator">=</span> e2.id <span class="keyword">and</span> e1.salary <span class="operator">&gt;</span> e2.salary;</span><br></pre></td></tr></table></figure>
 
 <ol start="182">
 <li><p>查找重复的电子邮箱 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/duplicate-emails/">https://leetcode.cn/problems/duplicate-emails/</a><br>有时候，遇到数据库重复数据，需要将数据进行分组，并取出其中一条来展示，这时就需要用到group by语句。<br>having 用于筛选分组后的数据</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line"><span class="keyword">select</span> email <span class="keyword">from</span> Person <span class="keyword">group</span> <span class="keyword">by</span> email <span class="keyword">having</span> <span class="built_in">count</span>(email) <span class="operator">&gt;</span><span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> email <span class="keyword">from</span> Person <span class="keyword">group</span> <span class="keyword">by</span> email <span class="keyword">having</span> <span class="built_in">count</span>(email) <span class="operator">&gt;</span><span class="number">1</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>组合两个表<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/combine-two-tables/">https://leetcode.cn/problems/combine-two-tables/</a></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select firstName,lastName,city ,state from Person left join Address on Person.PersonId = Address.PersonId;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> firstName,lastName,city ,state <span class="keyword">from</span> Person <span class="keyword">left</span> <span class="keyword">join</span> Address <span class="keyword">on</span> Person.PersonId <span class="operator">=</span> Address.PersonId;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>从不订购的客户<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/customers-who-never-order/">https://leetcode.cn/problems/customers-who-never-order/</a></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  Name  <span class="keyword">as</span> Customers <span class="keyword">from</span> Customers <span class="keyword">where</span> Id <span class="keyword">not</span> <span class="keyword">in</span> (<span class="keyword">select</span> <span class="keyword">distinct</span> CustomerId <span class="keyword">from</span> Orders);</span><br></pre></td></tr></table></figure></li>
+<li><p>删除重复的电子邮箱<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/delete-duplicate-emails/">https://leetcode.cn/problems/delete-duplicate-emails/</a></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span>  p1 <span class="keyword">from</span> Person p1, person p2 <span class="keyword">where</span>  p1.email <span class="operator">=</span> p2.email <span class="keyword">and</span> p1.id<span class="operator">&gt;</span>p2.id;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>上升的温度<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/rising-temperature/">https://leetcode.cn/problems/rising-temperature/</a><br>日期函数：datediff 两个日期的天数差集<br>eg.<br>DATEDIFF(‘2007-12-31’,’2007-12-30’);   # 1<br>DATEDIFF(‘2010-12-30’,’2010-12-31’);   # -1</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select w1.id from Weather w1,Weather w2 where datediff(w1.recordDate,w2.recordDate)=1 and w1.temperature &gt; w2.temperature;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ol start="180">
+<li>连续出现的数字<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/consecutive-numbers/">https://leetcode.cn/problems/consecutive-numbers/</a><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> l1.Num <span class="keyword">as</span> ConsecutiveNums</span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">Logs l1, Logs l2, Logs L3</span><br><span class="line"><span class="keyword">where</span></span><br><span class="line"># id是否连续</span><br><span class="line">l1.id <span class="operator">=</span> l2.id<span class="number">-1</span> <span class="keyword">and</span> l2.id <span class="operator">=</span> l3.id<span class="number">-1</span> </span><br><span class="line"><span class="keyword">and</span></span><br><span class="line"># Num是否相等</span><br><span class="line">l1.Num <span class="operator">=</span> l2.Num <span class="keyword">and</span> l2.Num <span class="operator">=</span> l3.Num</span><br></pre></td></tr></table></figure></li>
 </ol>
 
       
