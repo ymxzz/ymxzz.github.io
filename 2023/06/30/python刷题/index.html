@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>YM学渣</title>
+  <title>python刷题 | YM学渣</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="YM学渣">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+  <meta name="description" content="字符串字符串最后一个单词的长度：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python刷题">
+<meta property="og:url" content="http://example.com/2023/06/30/python%E5%88%B7%E9%A2%98/index.html">
 <meta property="og:site_name" content="YM学渣">
+<meta property="og:description" content="字符串字符串最后一个单词的长度：">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-06-30T10:57:22.000Z">
+<meta property="article:modified_time" content="2023-07-01T06:12:21.349Z">
 <meta property="article:author" content="YM学渣">
 <meta name="twitter:card" content="summary">
   
@@ -152,63 +156,177 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-hexo搭建博客笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-python刷题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/07/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">hexo搭建博客笔记</a>
+    <h1 class="article-title" itemprop="name">
+      python刷题
     </h1>
   
 
         
-        <a href="/2021/05/07/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2021-05-07T06:48:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-07</time>
+        <a href="/2023/06/30/python%E5%88%B7%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2023-06-30T10:57:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-06-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="下载安装Git，nodeJS"><a href="#下载安装Git，nodeJS" class="headerlink" title="下载安装Git，nodeJS"></a>下载安装Git，nodeJS</h3>
-        
-          <a class="article-more-a" href="/2021/05/07/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/#more">more >></a>
-        
+        <h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>字符串最后一个单词的长度：</p>
+<span id="more"></span>
+<p>str.split()  <a target="_blank" rel="noopener" href="https://www.runoob.com/python/att-string-split.html">https://www.runoob.com/python/att-string-split.html</a></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&quot;Hello world&quot;</span></span><br><span class="line">a = s.split()</span><br><span class="line">a</span><br><span class="line">[<span class="string">&#x27;Hello&#x27;</span>, <span class="string">&#x27;world&#x27;</span>]</span><br><span class="line"><span class="built_in">len</span>(a[-<span class="number">1</span>])</span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<p>计算某字符出现次数</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">input</span>().lower()</span><br><span class="line">b = <span class="built_in">input</span>().lower()</span><br><span class="line"><span class="built_in">print</span>(a.count(b))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>字符串分隔</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="built_in">input</span>()</span><br><span class="line">res = <span class="built_in">list</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="built_in">len</span>(s)&gt;=<span class="number">8</span>:</span><br><span class="line">    res.append(s[:<span class="number">8</span>])</span><br><span class="line">    s= s[<span class="number">8</span>:]</span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(s)&gt;<span class="number">0</span>:</span><br><span class="line">    res.append(s+(<span class="string">&quot;0&quot;</span>*(<span class="number">8</span>-<span class="built_in">len</span>(s))))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> res:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>进制转换</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int(&quot;0x10&quot;,16)</span><br><span class="line">16</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>质数因子<br> c &#x3D; a*b<br> a,b中至少一个数字小于等于根号a<br> <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">eval</span>(<span class="built_in">input</span>())</span><br><span class="line"></span><br><span class="line"><span class="comment"># c = a*b</span></span><br><span class="line"><span class="comment"># a,b中至少一个数字小于等于根号a</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, <span class="built_in">int</span>(n**<span class="number">0.5</span>)+<span class="number">1</span>):</span><br><span class="line">    <span class="keyword">while</span> n % i == <span class="number">0</span>:</span><br><span class="line">        <span class="built_in">print</span>(i, end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">        n = n//i</span><br><span class="line"><span class="keyword">if</span> n &gt; <span class="number">2</span>:</span><br><span class="line">    <span class="built_in">print</span>(n)</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>取近似值<br> <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">n = <span class="built_in">eval</span>(<span class="built_in">input</span>())</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> n-<span class="built_in">int</span>(n) &gt;=<span class="number">0.5</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">int</span>(n+<span class="number">1</span>))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">int</span>(n))</span><br></pre></td></tr></table></figure></p>
+<p> 求最小公倍数（最大公约数）</p>
+ <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 辗转相除法求最大公约数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">gys</span>(<span class="params">a,b</span>):</span><br><span class="line">    <span class="keyword">if</span> b==<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> a</span><br><span class="line">    <span class="keyword">return</span> gys(b,a%b)</span><br><span class="line"></span><br><span class="line">num = <span class="built_in">input</span>()</span><br><span class="line">a,b = <span class="built_in">map</span>(<span class="built_in">int</span>,num.split())</span><br><span class="line"><span class="keyword">if</span> a&lt;b :</span><br><span class="line">    a,b=b,a</span><br><span class="line">c = gys(a,b)</span><br><span class="line"><span class="comment"># 最小公倍数*最大公约数 = a*b</span></span><br><span class="line">d = <span class="built_in">int</span>((a*b)/c)</span><br><span class="line"><span class="built_in">print</span>(d)</span><br></pre></td></tr></table></figure>
+
+<p> 立方根</p>
+ <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 二分</span></span><br><span class="line">num = <span class="built_in">float</span>(<span class="built_in">input</span>())</span><br><span class="line">l=-<span class="number">20</span></span><br><span class="line">r=<span class="number">20</span></span><br><span class="line"><span class="keyword">while</span>(<span class="built_in">abs</span>(r-l)&gt;<span class="number">0.01</span>):</span><br><span class="line">    x = (l+r)/<span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> x*x*x &gt;num:</span><br><span class="line"></span><br><span class="line">        r = x    </span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        l = x</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">round</span>(x,<span class="number">1</span>)) <span class="comment"># 保留一位小数</span></span><br></pre></td></tr></table></figure>
+
+<p> 字符统计</p>
+ <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="built_in">input</span>()</span><br><span class="line">d = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 统计字符出现次数</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">    <span class="keyword">if</span> i <span class="keyword">not</span> <span class="keyword">in</span> d:</span><br><span class="line">        d[i] = <span class="number">0</span></span><br><span class="line">    d[i]+=<span class="number">1</span></span><br><span class="line"><span class="comment"># -d[x]: 按值降序，x:按key升序</span></span><br><span class="line"><span class="built_in">print</span>(*<span class="built_in">sorted</span>(d,key=<span class="keyword">lambda</span> x:(-d[x],x)),sep = <span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="comment"># sorted() https://www.runoob.com/python/python-func-sorted.html</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> 合并表记录</p>
+ <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">eval</span>(<span class="built_in">input</span>())</span><br><span class="line">d= <span class="built_in">dict</span>()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    index,value = <span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br><span class="line">    <span class="comment"># d.get(index,0),index不存在返回0</span></span><br><span class="line">    d[index] = d.get(index,<span class="number">0</span>)+value</span><br><span class="line"></span><br><span class="line"><span class="comment">#  按照index值升序排列</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">sorted</span>(d.keys(),key=<span class="keyword">lambda</span> index:index):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;i&#125;</span> <span class="subst">&#123;d[i]&#125;</span>&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p> 字符个数统计<br> <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="built_in">input</span>()</span><br><span class="line"><span class="comment"># ord(),字符转为ASCII,判断是否在0~127之间</span></span><br><span class="line">s = <span class="built_in">set</span>([i <span class="keyword">for</span> i <span class="keyword">in</span> s <span class="keyword">if</span> <span class="number">0</span>&lt;=<span class="built_in">ord</span>(i)&lt;=<span class="number">127</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(s))</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>句子逆序<br> <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="built_in">input</span>().strip().split()</span><br><span class="line">res = <span class="string">&quot; &quot;</span>.join(s[::-<span class="number">1</span>])</span><br><span class="line"><span class="built_in">print</span>(res)</span><br></pre></td></tr></table></figure></p>
+<p>字符串排序</p>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">eval</span>(<span class="built_in">input</span>())</span><br><span class="line">res = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    res.append(<span class="built_in">input</span>())</span><br><span class="line">res.sort()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> res:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>求int型正整数在内存中存储时1的个数<br>  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="built_in">eval</span>(<span class="built_in">input</span>())</span><br><span class="line"></span><br><span class="line">n = <span class="built_in">bin</span>(s).count(<span class="string">&quot;1&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(n)</span><br></pre></td></tr></table></figure></p>
+<p>HJ17 坐标移动<br>  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">n = <span class="built_in">input</span>().split(<span class="string">&quot;;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> n:</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(i)&gt;<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">if</span> i[<span class="number">0</span>] == <span class="string">&#x27;A&#x27;</span> <span class="keyword">and</span> i[<span class="number">1</span>:].isdigit():</span><br><span class="line">            a[<span class="number">0</span>]-= <span class="built_in">int</span>(i[<span class="number">1</span>:])</span><br><span class="line">        <span class="keyword">elif</span> i[<span class="number">0</span>] == <span class="string">&#x27;D&#x27;</span> <span class="keyword">and</span> i[<span class="number">1</span>:].isdigit():</span><br><span class="line">            a[<span class="number">0</span>]+= <span class="built_in">int</span>(i[<span class="number">1</span>:])</span><br><span class="line">        <span class="keyword">elif</span> i[<span class="number">0</span>] == <span class="string">&#x27;W&#x27;</span> <span class="keyword">and</span> i[<span class="number">1</span>:].isdigit():</span><br><span class="line">            a[<span class="number">1</span>]+= <span class="built_in">int</span>(i[<span class="number">1</span>:])</span><br><span class="line">        <span class="keyword">elif</span> i[<span class="number">0</span>] == <span class="string">&#x27;S&#x27;</span> <span class="keyword">and</span> i[<span class="number">1</span>:].isdigit():</span><br><span class="line">            a[<span class="number">1</span>]-= <span class="built_in">int</span>(i[<span class="number">1</span>:])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;a[<span class="number">0</span>]&#125;</span>,<span class="subst">&#123;a[<span class="number">1</span>]&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure></p>
+<p>HJ18 识别有效的IP地址和掩码并进行分类统计</p>
+<p>HJ23 删除字符串中出现次数最少的字符</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;&#125;</span><br><span class="line">s = <span class="built_in">input</span>().strip()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">    d[i] = d.get(i,<span class="number">0</span>)+<span class="number">1</span></span><br><span class="line"></span><br><span class="line">b = <span class="built_in">sorted</span>(d,key=<span class="keyword">lambda</span> x:d[x])</span><br><span class="line"></span><br><span class="line">s = s.replace(b[<span class="number">0</span>],<span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> b:</span><br><span class="line">    <span class="keyword">if</span> d[i] == d[b[<span class="number">0</span>]]:</span><br><span class="line">        s = s.replace(i,<span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(s)</span><br></pre></td></tr></table></figure>
+
+<p>HJ29 字符串加解密</p>
+<p>按要求分情况讨论</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">s1 = <span class="built_in">input</span>().strip()</span><br><span class="line">s2 = <span class="built_in">input</span>().strip()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加密</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">jiami</span>(<span class="params">s</span>):</span><br><span class="line">    res = <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">        <span class="keyword">if</span> i.isupper() : <span class="comment"># 如果是大写</span></span><br><span class="line">            <span class="keyword">if</span> i == <span class="string">&#x27;Z&#x27;</span>:</span><br><span class="line">                res+= <span class="string">&#x27;a&#x27;</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                res+= <span class="built_in">chr</span>(<span class="built_in">ord</span>(i)+<span class="number">32</span>+<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">elif</span> i.islower(): <span class="comment"># 如果是小写</span></span><br><span class="line">            <span class="keyword">if</span> i == <span class="string">&#x27;z&#x27;</span>:</span><br><span class="line">                res+=<span class="string">&#x27;A&#x27;</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                res+=<span class="built_in">chr</span>(<span class="built_in">ord</span>(i)-<span class="number">32</span>+<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">elif</span> i.isdigit():</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">int</span>(i) == <span class="number">9</span>:</span><br><span class="line">                res+=<span class="string">&#x27;0&#x27;</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                res += <span class="built_in">str</span>(<span class="built_in">int</span>(i)+<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解密</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">jiemi</span>(<span class="params">s</span>):</span><br><span class="line">    res = <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">        <span class="keyword">if</span> i.isupper() : <span class="comment"># 如果是大写</span></span><br><span class="line">            <span class="keyword">if</span> i == <span class="string">&#x27;A&#x27;</span>:</span><br><span class="line">                res+= <span class="string">&#x27;z&#x27;</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                res+= <span class="built_in">chr</span>(<span class="built_in">ord</span>(i)+<span class="number">32</span>-<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">elif</span> i.islower(): <span class="comment"># 如果是小写</span></span><br><span class="line">            <span class="keyword">if</span> i == <span class="string">&#x27;a&#x27;</span>:</span><br><span class="line">                res+=<span class="string">&#x27;Z&#x27;</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                res+=<span class="built_in">chr</span>(<span class="built_in">ord</span>(i)-<span class="number">32</span>-<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">elif</span> i.isdigit(): <span class="comment"># 如果是数字</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">int</span>(i) == <span class="number">0</span>:</span><br><span class="line">                res+=<span class="string">&#x27;9&#x27;</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                res += <span class="built_in">str</span>(<span class="built_in">int</span>(i)-<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(jiami(s1))</span><br><span class="line"><span class="built_in">print</span>(jiemi(s2))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zfb.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wx.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/05/07/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
 
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://example.com/2023/06/30/python%E5%88%B7%E9%A2%98/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2023/06/29/Django%E5%AD%A6%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Django学习</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -223,158 +341,39 @@ var _hmt = _hmt || [];
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-动画绘画软件分享" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/07/%E5%8A%A8%E7%94%BB%E7%BB%98%E7%94%BB%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/">软件分享</a>
-    </h1>
-  
-
-        
-        <a href="/2021/05/07/%E5%8A%A8%E7%94%BB%E7%BB%98%E7%94%BB%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/" class="archive-article-date">
-  	<time datetime="2021-05-07T06:48:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="软件分享："><a href="#软件分享：" class="headerlink" title="软件分享："></a>软件分享：</h3>
-        
-          <a class="article-more-a" href="/2021/05/07/%E5%8A%A8%E7%94%BB%E7%BB%98%E7%94%BB%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/05/07/%E5%8A%A8%E7%94%BB%E7%BB%98%E7%94%BB%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.</span> <span class="toc-text">字符串</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-随笔" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/07/%E9%9A%8F%E7%AC%94/">记录每日好心情</a>
-    </h1>
-  
-
-        
-        <a href="/2021/05/07/%E9%9A%8F%E7%AC%94/" class="archive-article-date">
-  	<time datetime="2021-05-07T06:48:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="随笔"><a href="#随笔" class="headerlink" title="随笔"></a>随笔</h1>
-        
-          <a class="article-more-a" href="/2021/05/07/%E9%9A%8F%E7%AC%94/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/05/07/%E9%9A%8F%E7%AC%94/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+  <div id="SOHUCS" sid="python刷题" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "cysX3aGWt"; 
+var conf = "prod_1dcda447175aada96edcdb7e412338fa"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+  
+
   
 
 
@@ -397,8 +396,8 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
